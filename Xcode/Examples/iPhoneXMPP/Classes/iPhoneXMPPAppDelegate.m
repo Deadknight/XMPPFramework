@@ -293,15 +293,20 @@
 	// If you don't want to use the Settings view to set the JID, 
 	// uncomment the section below to hard code a JID and password.
 	// 
-	// myJID = @"user@gmail.com/xmppframework";
-	// myPassword = @"";
+	 myJID = @"test.xmpp1/xmppframework";
+	 myPassword = @"123123";
 	
 	if (myJID == nil || myPassword == nil) {
 		return NO;
 	}
 
 	[xmppStream setMyJID:[XMPPJID jidWithString:myJID]];
+    xmppStream.hostName = @"wss://xmpp.pinsoft.ist/xmpp-websocket";
 	password = myPassword;
+    
+    [DDLog addLogger:[DDOSLogger sharedInstance] withLevel:DDLogLevelAll];
+    
+    NSLog(@"run started");
 
 	NSError *error = nil;
 	if (![xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error])

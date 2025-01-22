@@ -808,6 +808,7 @@ extern const NSTimeInterval XMPPStreamTimeoutNone;
  * please use XMPPStream's enableBackgroundingOnSocket property as opposed to doing it directly on the socket here.
 **/
 - (void)xmppStream:(XMPPStream *)sender socketDidConnect:(GCDAsyncSocket *)socket;
+- (void)xmppStream:(XMPPStream *)sender socketDidConnectWS:(NSURLSession *)session;
 
 /**
  * This method is called after a TCP connection has been established with the server,

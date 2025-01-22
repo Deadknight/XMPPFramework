@@ -430,6 +430,25 @@
 	}
 }
 
+- (void)xmppStream:(XMPPStream *)sender socketDidConnectWS:(NSURLSession *)session
+{
+	/*NSData *currentServerAddress = [socket connectedAddress];
+	
+	if (lastServerAddress == nil)
+	{
+		self.lastServerAddress = currentServerAddress;
+	}
+	else if (![lastServerAddress isEqualToData:currentServerAddress])
+	{
+		XMPPLogInfo(@"%@: Connected to a different server. Resetting calibration info.", [self class]);
+		
+		lastCalibrationTime = DISPATCH_TIME_FOREVER;
+		timeDifference = 0.0;
+		
+		self.lastServerAddress = currentServerAddress;
+	}*/
+}
+
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
 	[self startRecalibrationTimer];
